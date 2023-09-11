@@ -25,4 +25,4 @@ def josephus_problem() -> int:
         else:
             list_soldiers.pop(0)
             counter = 0
-    return list_soldiers[0]
+    print(list_soldiers[0])
