@@ -1,5 +1,5 @@
 import josephus_problem, coordinate_quarters, more_than_previous, swap_neighbour,\
-    developmental_shift
+    developmental_shift, various_elements
 
 
 def tasks():
@@ -8,6 +8,7 @@ def tasks():
     print("3. Больше чем предыдущее")
     print("4. Назад, вперёд и наоборот")
     print("5. Сдвиг в развитии")
+    print("6. Различные элементы")
 
 
 def choice():
@@ -24,6 +25,8 @@ def choice():
             swap_neighbour.swap_nghbr()
         case 5:
             developmental_shift.dvlpmntl_shift()
+        case 6:
+            various_elements.various_elements()
         case _:
             print("Такой задачи нет =(")
 
