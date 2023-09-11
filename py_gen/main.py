@@ -1,5 +1,5 @@
-import josephus_problem, coordinate_quarters, more_than_previous
-import swap_neighbour
+import josephus_problem, coordinate_quarters, more_than_previous, swap_neighbour,\
+    developmental_shift
 
 
 def tasks():
@@ -7,6 +7,7 @@ def tasks():
     print("2. Координатные четверти")
     print("3. Больше чем предыдущее")
     print("4. Назад, вперёд и наоборот")
+    print("5. Сдвиг в развитии")
 
 
 def choice():
@@ -21,6 +22,8 @@ def choice():
             more_than_previous.count_digits_more_than_prev()
         case 4:
             swap_neighbour.swap_nghbr()
+        case 5:
+            developmental_shift.dvlpmntl_shift()
         case _:
             print("Такой задачи нет =(")
 
