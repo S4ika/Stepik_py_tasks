@@ -8,14 +8,7 @@
 
 # Формат выходных данных
 # Программа должна вывести одно число – номер человека, который останется в кругу последним.
-# def simple_log(num,base) -> int:
-#     counter = 1
-#     temp = base
-#     while temp * base <= num:
-#         temp *= base
-#         counter += 1
-#     return counter
-#
+
 def josephus_problem() -> int:
     n = int(input("Введите количество человек : "))
     k = int(input("Введите номер выбывающего человека : "))
