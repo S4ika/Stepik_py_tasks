@@ -1,5 +1,6 @@
 import josephus_problem, coordinate_quarters, more_than_previous, swap_neighbour,\
-    developmental_shift, various_elements
+    developmental_shift, various_elements, mul_dig, rock_paper_scissors,rock_paper_scissors_lizard_spok,\
+    o_and_p
 
 
 def tasks():
@@ -9,6 +10,10 @@ def tasks():
     print("4. Назад, вперёд и наоборот")
     print("5. Сдвиг в развитии")
     print("6. Различные элементы")
+    print("7. Произведение чисел")
+    print("8. Камень, ножницы, бумага")
+    print("9. Камень, ножницы, бумага, ящерица, Спок ")
+    print("10. Орел и Решка")
 
 
 def choice():
@@ -27,6 +32,14 @@ def choice():
             developmental_shift.dvlpmntl_shift()
         case 6:
             various_elements.various_elements()
+        case 7:
+            mul_dig.mul_dig()
+        case 8:
+            rock_paper_scissors.start_game()
+        case 9:
+            rock_paper_scissors_lizard_spok.start_game()
+        case 10:
+            o_and_p.counter_p()
         case _:
             print("Такой задачи нет =(")
 
