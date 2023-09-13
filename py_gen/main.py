@@ -1,6 +1,6 @@
 import josephus_problem, coordinate_quarters, more_than_previous, swap_neighbour,\
     developmental_shift, various_elements, mul_dig, rock_paper_scissors,rock_paper_scissors_lizard_spok,\
-    o_and_p,sillicon_valley,roscomnadzor
+    o_and_p,sillicon_valley,roscomnadzor, pascal_triangle
 
 
 def tasks():
@@ -16,6 +16,7 @@ def tasks():
     print("10. Орел и Решка")
     print("11. Кремниевая долина")
     print("12. Роскомнадзор запретил букву а")
+    print("13. Треугольник Паскаля (выводим n-й уровень)")
 
 
 def choice():
@@ -46,6 +47,8 @@ def choice():
             sillicon_valley.find_anton()
         case 12:
             roscomnadzor.opyat_etot_()
+        case 13:
+            pascal_triangle.create_pascal_triangle()
         case _:
             print("Такой задачи нет =(")
 
