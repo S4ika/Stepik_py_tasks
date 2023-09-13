@@ -1,6 +1,6 @@
 import josephus_problem, coordinate_quarters, more_than_previous, swap_neighbour,\
     developmental_shift, various_elements, mul_dig, rock_paper_scissors,rock_paper_scissors_lizard_spok,\
-    o_and_p,sillicon_valley
+    o_and_p,sillicon_valley,roscomnadzor
 
 
 def tasks():
@@ -15,6 +15,7 @@ def tasks():
     print("9. Камень, ножницы, бумага, ящерица, Спок ")
     print("10. Орел и Решка")
     print("11. Кремниевая долина")
+    print("12. Роскомнадзор запретил букву а")
 
 
 def choice():
@@ -43,6 +44,8 @@ def choice():
             o_and_p.counter_p()
         case 11:
             sillicon_valley.find_anton()
+        case 12:
+            roscomnadzor.opyat_etot_()
         case _:
             print("Такой задачи нет =(")
 
