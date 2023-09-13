@@ -1,6 +1,6 @@
 import josephus_problem, coordinate_quarters, more_than_previous, swap_neighbour,\
     developmental_shift, various_elements, mul_dig, rock_paper_scissors,rock_paper_scissors_lizard_spok,\
-    o_and_p
+    o_and_p,sillicon_valley
 
 
 def tasks():
@@ -14,6 +14,7 @@ def tasks():
     print("8. Камень, ножницы, бумага")
     print("9. Камень, ножницы, бумага, ящерица, Спок ")
     print("10. Орел и Решка")
+    print("11. Кремниевая долина")
 
 
 def choice():
@@ -40,6 +41,8 @@ def choice():
             rock_paper_scissors_lizard_spok.start_game()
         case 10:
             o_and_p.counter_p()
+        case 11:
+            sillicon_valley.find_anton()
         case _:
             print("Такой задачи нет =(")
 
