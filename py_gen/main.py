@@ -17,6 +17,7 @@ def tasks():
     print("11. Кремниевая долина")
     print("12. Роскомнадзор запретил букву а")
     print("13. Треугольник Паскаля (выводим n-й уровень)")
+    print("14. Треугольник Паскаля")
 
 
 def choice():
@@ -48,7 +49,9 @@ def choice():
         case 12:
             roscomnadzor.opyat_etot_()
         case 13:
-            pascal_triangle.create_pascal_triangle()
+            pascal_triangle.n_level()
+        case 14:
+            pascal_triangle.pascal_triangle()
         case _:
             print("Такой задачи нет =(")
 
