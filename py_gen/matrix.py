@@ -1,16 +1,19 @@
 
 
 
-def print_matrix(matrix):
-    for i in range(len(matrix)):
-        for j in range(len(matrix[0])):
+def print_matrix(matrix,n,m):
+    for i in range(n):
+        for j in range(m):
             print(matrix[i][j], end=" ")
         print()
 
+def print_matrix_2(matrix,n,m):
+    for i in range(m):
+        for j in range(n):
+            print(matrix[j][i], end=" ")
+        print()
 
-def create_matrix():
-    n = int(input())
-    m = int(input())
+def create_matrix(n,m):
     matrix = [[0] * m for _ in range(n)]
     for i in range(n):
         for j in range(m):
@@ -32,4 +35,12 @@ def create_matrix():
 # Программа должна вывести считанную матрицу, разделяя ее элементы одним пробелом.
 
 def create_and_print_matrix():
-    print_matrix(create_matrix())
+    n = int(input())
+    m = int(input())
+    mtx = create_matrix(n,m)
+    print_matrix(mtx,n,m)
+    print()
+    print_matrix_2(mtx, n, m)
+
+
+create_and_print_matrix()
