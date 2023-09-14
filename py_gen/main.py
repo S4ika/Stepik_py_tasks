@@ -22,6 +22,7 @@ def tasks():
     print("16. Разбиение на чанки")
     print("17. Подсписки списка")
     print("18. Ввод и вывод матрицы")
+    print("19. След матрицы")
 
 
 def choice():
@@ -64,6 +65,8 @@ def choice():
             sublists.run()
         case 18:
             matrix.create_and_print_matrix()
+        case 19:
+            matrix.create_square_matrix_and_sum_diagonal_elems()
         case _:
             print("Такой задачи нет =(")
 
