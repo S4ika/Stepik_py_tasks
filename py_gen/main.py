@@ -23,6 +23,7 @@ def tasks():
     print("17. Подсписки списка")
     print("18. Ввод и вывод матрицы")
     print("19. След матрицы")
+    print("20. Больше среднего")
 
 
 def choice():
@@ -67,6 +68,8 @@ def choice():
             matrix.create_and_print_matrix()
         case 19:
             matrix.create_square_matrix_and_sum_diagonal_elems()
+        case 20:
+            matrix.more_than_avg()
         case _:
             print("Такой задачи нет =(")
 

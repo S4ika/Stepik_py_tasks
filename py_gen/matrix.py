@@ -59,4 +59,32 @@ def create_square_matrix_and_sum_diagonal_elems():
     mtx = create_square_matrix_from_string(n)
     print(sum_diagonal_elems(mtx))
 
-create_square_matrix_and_sum_diagonal_elems()
+# Напишите программу, которая выводит количество элементов квадратной матрицы в каждой строке,
+# больших среднего арифметического элементов данной строки.
+#
+# Формат входных данных
+# На вход программе подаётся натуральное число n — количество строк и столбцов в матрице,
+# затем элементы матрицы (целые числа) построчно через пробел.
+#
+# Формат выходных данных
+# Программа должна вывести n чисел — для каждой строки количество элементов матрицы,
+# больших среднего арифметического элементов данной строки.
+def avg_value_in_list(list):
+    sum = 0
+    for i in range(len(list)):
+        sum += list[i]
+    return sum / len(list)
+
+
+def more_than_avg():
+    n = int(input())
+    mtx = create_square_matrix_from_string(n)
+    for i in range(len(mtx)):
+        avg = avg_value_in_list(mtx[i])
+        counter = 0
+        for j in range(len(mtx)):
+            if mtx[i][j] > avg:
+                counter += 1
+        print(counter)
+
+more_than_avg()
