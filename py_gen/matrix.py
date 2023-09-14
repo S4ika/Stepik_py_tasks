@@ -96,3 +96,17 @@ def max_below_main_diagonal():
             if max < mtx[i][j]:
                 max = mtx[i][j]
     print(max)
+
+def max_in_area():
+    n = int(input())
+    mtx = create_square_matrix_from_string(n)
+    max = mtx[0][0]
+    for i in range(n):
+        for j in range(0, n):
+            if (i >= j and i <= n - 1 -j) or (i <= j and i >= n - 1 -j) or (i == j) or (i + j + 1 == n):
+                if max < mtx[i][j]:
+                    max = mtx[i][j]
+    print(max)
+
+
+max_in_area()
