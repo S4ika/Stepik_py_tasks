@@ -1,6 +1,6 @@
 import josephus_problem, coordinate_quarters, more_than_previous, swap_neighbour,\
     developmental_shift, various_elements, mul_dig, rock_paper_scissors,rock_paper_scissors_lizard_spok,\
-    o_and_p,sillicon_valley,roscomnadzor, pascal_triangle, packing_duplicates, chunky, sublists
+    o_and_p,sillicon_valley,roscomnadzor, pascal_triangle, packing_duplicates, chunky, sublists, matrix
 
 
 def tasks():
@@ -21,6 +21,7 @@ def tasks():
     print("15. Упаковка дупликатов")
     print("16. Разбиение на чанки")
     print("17. Подсписки списка")
+    print("18. Ввод и вывод матрицы")
 
 
 def choice():
@@ -61,6 +62,8 @@ def choice():
             chunky.run()
         case 17:
             sublists.run()
+        case 18:
+            matrix.create_and_print_matrix()
         case _:
             print("Такой задачи нет =(")
 
