@@ -87,4 +87,12 @@ def more_than_avg():
                 counter += 1
         print(counter)
 
-more_than_avg()
+def max_below_main_diagonal():
+    n = int(input())
+    mtx = create_square_matrix_from_string(n)
+    max = mtx[0][0]
+    for i in range(n):
+        for j in range(0,i+1):
+            if max < mtx[i][j]:
+                max = mtx[i][j]
+    print(max)

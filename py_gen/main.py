@@ -24,6 +24,7 @@ def tasks():
     print("18. Ввод и вывод матрицы")
     print("19. След матрицы")
     print("20. Больше среднего")
+    print("21. Максимальный элемент ниже(или находится на) главной диагонали")
 
 
 def choice():
@@ -70,6 +71,8 @@ def choice():
             matrix.create_square_matrix_and_sum_diagonal_elems()
         case 20:
             matrix.more_than_avg()
+        case 21:
+            matrix.max_below_main_diagonal()
         case _:
             print("Такой задачи нет =(")
 
