@@ -214,4 +214,26 @@ def swap_diagonals():
 
     print_matrix(mtx, n, n)
 
-swap_diagonals()
+
+def up_and_down():
+    n = int(input())
+    mtx = create_square_matrix_from_string(n)
+    count_iter = n // 2 + n % 2
+    for i in range(count_iter):
+        for j in range(n):
+            temp = mtx[i][j]
+            mtx[i][j] = mtx[n - 1 - i][j]
+            mtx[n - 1 - i][j] = temp
+
+    print_matrix(mtx, n, n)
+
+def rotate_matrix():
+    n = int(input())
+    mtx = create_square_matrix_from_string(n)
+    res_mtx = [[] for _ in range(n)]
+    for i in range(n):
+        for j in range(n):
+            res_mtx[i].append(mtx[n-1-j][i])
+    print_matrix(res_mtx, n, n)
+
+rotate_matrix()

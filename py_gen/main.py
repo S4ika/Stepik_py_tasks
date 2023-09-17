@@ -31,6 +31,8 @@ def tasks():
     print("25. Обмен столбцов")
     print("26. Симметричная матрица")
     print("27. Обмен диагоналей")
+    print("28. Зеркальное отображение")
+    print("29. Поворот матрицы")
 
 
 def choice():
@@ -91,6 +93,10 @@ def choice():
             matrix.is_symmetrical()
         case 27:
             matrix.swap_diagonals()
+        case 28:
+            matrix.up_and_down()
+        case 29:
+            matrix.rotate_matrix()
         case _:
             print("Такой задачи нет =(")
 
