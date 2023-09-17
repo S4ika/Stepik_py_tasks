@@ -203,4 +203,15 @@ def is_symmetrical():
     else:
         print("NO")
 
-is_symmetrical()
+
+def swap_diagonals():
+    n = int(input())
+    mtx = create_square_matrix_from_string(n)
+    for i in range(n):
+        temp = mtx[i][i]
+        mtx[i][i] = mtx[n-1-i][i]
+        mtx[n-1-i][i] = temp
+
+    print_matrix(mtx, n, n)
+
+swap_diagonals()

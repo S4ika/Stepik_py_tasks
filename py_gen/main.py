@@ -30,6 +30,7 @@ def tasks():
     print("24. Максимум в таблице(индексы первого вхождения)")
     print("25. Обмен столбцов")
     print("26. Симметричная матрица")
+    print("27. Обмен диагоналей")
 
 
 def choice():
@@ -88,6 +89,8 @@ def choice():
             matrix.swap_column()
         case 26:
             matrix.is_symmetrical()
+        case 27:
+            matrix.swap_diagonals()
         case _:
             print("Такой задачи нет =(")
 
