@@ -189,4 +189,18 @@ def swap_column():
     return res
 
 
-print(swap_column())
+def is_symmetrical():
+    n = int(input())
+    mtx = create_square_matrix_from_string(n)
+    flag = 1
+    for i in range(1,n):
+        for j in range(0,i):
+            print(mtx[i][j],mtx[j][i])
+            if mtx[i][j] != mtx[j][i]:
+                flag = 0
+    if flag:
+        print("YES")
+    else:
+        print("NO")
+
+is_symmetrical()
