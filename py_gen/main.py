@@ -28,6 +28,7 @@ def tasks():
     print("22. Суммы четвертей матрицы")
     print("23. Таблица умножения")
     print("24. Максимум в таблице(индексы первого вхождения)")
+    print("25. Обмен столбцов")
 
 
 def choice():
@@ -82,6 +83,8 @@ def choice():
             matrix.mul_table()
         case 24:
             matrix.index_max_value_in_table()
+        case 25:
+            matrix.swap_column()
         case _:
             print("Такой задачи нет =(")
 

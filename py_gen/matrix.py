@@ -169,4 +169,24 @@ def index_max_value_in_table():
                 return str(i) + " " + str(j)
 
 
-print(index_max_value_in_table())
+def swap_column():
+    n = int(input())
+    m = int(input())
+    mtx = [[int(num) for num in input().split()] for _ in range(n)]
+    k = int(input())
+    l = int(input())
+
+    for i in range(n):
+        temp = mtx[i][l]
+        mtx[i][l] = mtx[i][k]
+        mtx[i][k] = temp
+
+    res = ""
+    for i in range(n):
+        for j in range(m):
+            res += str(mtx[i][j]) + " "
+        res += "\n"
+    return res
+
+
+print(swap_column())
