@@ -25,6 +25,7 @@ def tasks():
     print("19. След матрицы")
     print("20. Больше среднего")
     print("21. Максимальный элемент ниже(или находится на) главной диагонали")
+    print("22. Суммы четвертей матрицы")
 
 
 def choice():
@@ -73,6 +74,8 @@ def choice():
             matrix.more_than_avg()
         case 21:
             matrix.max_below_main_diagonal()
+        case 22:
+            matrix.sum_in_quaters()
         case _:
             print("Такой задачи нет =(")
 

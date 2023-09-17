@@ -109,4 +109,31 @@ def max_in_area():
     print(max)
 
 
-max_in_area()
+def sum_in_quaters():
+    n = int(input())
+    mtx = create_square_matrix_from_string(n)
+
+    top_sum = 0
+    right_sum = 0
+    bottom_sum = 0
+    left_sum = 0
+
+    for i in range(n):
+        for j in range(n):
+            if i < j and i + j < n - 1:  # верхняя четверть
+                top_sum += mtx[i][j]
+            elif i < j and i + j > n - 1:  # правая четверть
+                right_sum += mtx[i][j]
+            elif i > j and i + j > n - 1:  # нижняя четверть
+                bottom_sum += mtx[i][j]
+            elif i > j and i + j < n - 1:  # левая четверть
+                left_sum += mtx[i][j]
+
+    print("Верхняя четверть: ", top_sum)
+    print("Правая четверть: ", right_sum)
+    print("Нижняя четверть: ", bottom_sum)
+    print("Левая четверть: »", left_sum)
+
+
+
+    max_in_area()
