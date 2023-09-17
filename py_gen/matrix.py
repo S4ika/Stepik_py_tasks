@@ -149,4 +149,24 @@ def mul_table():
         res += "\n"
     return res
 
-print(mul_table())
+def max_value_in_mtx(mtx):
+    max = mtx[0][0]
+    for i in range(len(mtx)):
+        for j in range(len(mtx[0])):
+            if max < mtx[i][j]:
+                max = mtx[i][j]
+    return max
+
+
+def index_max_value_in_table():
+    n = int(input())
+    m = int(input())
+    mtx = [[int(num) for num in input().split()] for _ in range(n)]
+    max = max_value_in_mtx(mtx)
+    for i in range(n):
+        for j in range(m):
+            if mtx[i][j] == max:
+                return str(i) + " " + str(j)
+
+
+print(index_max_value_in_table())

@@ -27,6 +27,7 @@ def tasks():
     print("21. Максимальный элемент ниже(или находится на) главной диагонали")
     print("22. Суммы четвертей матрицы")
     print("23. Таблица умножения")
+    print("24. Максимум в таблице(индексы первого вхождения)")
 
 
 def choice():
@@ -79,6 +80,8 @@ def choice():
             matrix.sum_in_quaters()
         case 23:
             matrix.mul_table()
+        case 24:
+            matrix.index_max_value_in_table()
         case _:
             print("Такой задачи нет =(")
 
