@@ -135,5 +135,18 @@ def sum_in_quaters():
     print("Левая четверть: »", left_sum)
 
 
+def mul_table():
+    n = int(input())
+    m = int(input())
+    mtx = [[0 for _ in range(m)] for _ in range(n)]
+    for i in range(n):
+        for j in range(m):
+            mtx[i][j] = i * j
+    res = ""
+    for i in range(n):
+        for j in range(m):
+            res += str(mtx[i][j]) + " "
+        res += "\n"
+    return res
 
-    max_in_area()
+print(mul_table())
