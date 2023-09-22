@@ -257,6 +257,3 @@ def horse_attack():
                 print(b[i][j])
             else:
                 print(b[i][j], end=' ')
-
-
-horse_attack()

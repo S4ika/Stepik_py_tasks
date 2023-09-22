@@ -33,6 +33,7 @@ def tasks():
     print("27. Обмен диагоналей")
     print("28. Зеркальное отображение")
     print("29. Поворот матрицы")
+    print("30. Ходы коня")
 
 
 def choice():
@@ -97,6 +98,8 @@ def choice():
             matrix.up_and_down()
         case 29:
             matrix.rotate_matrix()
+        case 30:
+            matrix.horse_attack()
         case _:
             print("Такой задачи нет =(")
 
