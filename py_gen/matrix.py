@@ -236,4 +236,27 @@ def rotate_matrix():
             res_mtx[i].append(mtx[n-1-j][i])
     print_matrix(res_mtx, n, n)
 
-rotate_matrix()
+
+def horse_attack():
+    size = 8
+    horse_pos = input()
+    kj = ord(horse_pos[0]) - 97 + 1
+    ki = size - int(horse_pos[1]) + 1
+    b = [['.'] * 12 for i in range(12)]
+    moves = [1, 2, 1, -2, -1, 2, -1, -2, 2, 1, 2, -1, -2, 1, -2, -1]
+    ki += 1
+    kj += 1
+    for ii in range(0, 16, 2):
+        i = ki + moves[ii]
+        j = kj + moves[ii + 1]
+        b[i][j] = '*'
+    b[ki][kj] = 'N'
+    for i in range(2, 10):
+        for j in range(2, 10):
+            if (j == 9):
+                print(b[i][j])
+            else:
+                print(b[i][j], end=' ')
+
+
+horse_attack()
