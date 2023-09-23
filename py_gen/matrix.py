@@ -1,3 +1,7 @@
+def create_square_mtx():
+    n = int(input())
+    mtx = create_square_matrix_from_string(n)
+    return mtx
 
 def sum_diagonal_elems(matrix):
     sum = 0
@@ -55,8 +59,7 @@ def create_and_print_matrix():
 
 
 def create_square_matrix_and_sum_diagonal_elems():
-    n = int(input())
-    mtx = create_square_matrix_from_string(n)
+    mtx = create_square_mtx()
     print(sum_diagonal_elems(mtx))
 
 # Напишите программу, которая выводит количество элементов квадратной матрицы в каждой строке,
@@ -77,8 +80,7 @@ def avg_value_in_list(list):
 
 
 def more_than_avg():
-    n = int(input())
-    mtx = create_square_matrix_from_string(n)
+    mtx = create_square_mtx()
     for i in range(len(mtx)):
         avg = avg_value_in_list(mtx[i])
         counter = 0
@@ -88,8 +90,7 @@ def more_than_avg():
         print(counter)
 
 def max_below_main_diagonal():
-    n = int(input())
-    mtx = create_square_matrix_from_string(n)
+    mtx = create_square_mtx()
     max = mtx[0][0]
     for i in range(n):
         for j in range(0,i+1):
@@ -98,8 +99,7 @@ def max_below_main_diagonal():
     print(max)
 
 def max_in_area():
-    n = int(input())
-    mtx = create_square_matrix_from_string(n)
+    mtx = create_square_mtx()
     max = mtx[0][0]
     for i in range(n):
         for j in range(0, n):
@@ -110,8 +110,7 @@ def max_in_area():
 
 
 def sum_in_quaters():
-    n = int(input())
-    mtx = create_square_matrix_from_string(n)
+    mtx = create_square_mtx()
 
     top_sum = 0
     right_sum = 0
@@ -190,8 +189,7 @@ def swap_column():
 
 
 def is_symmetrical():
-    n = int(input())
-    mtx = create_square_matrix_from_string(n)
+    mtx = create_square_mtx()
     flag = 1
     for i in range(1,n):
         for j in range(0,i):
@@ -204,15 +202,20 @@ def is_symmetrical():
         print("NO")
 
 
-def swap_diagonals():
-    n = int(input())
-    mtx = create_square_matrix_from_string(n)
+def swap_diagonals_in_mtx(mtx):
+    n = len(mtx)
     for i in range(n):
         temp = mtx[i][i]
         mtx[i][i] = mtx[n-1-i][i]
         mtx[n-1-i][i] = temp
 
-    print_matrix(mtx, n, n)
+    return mtx
+
+
+def swap_diagonals():
+    mtx = create_square_mtx()
+    mtx_swap = swap_diagonals_in_mtx(mtx)
+    print_matrix(mtx_swap,len(mtx),len(mtx))
 
 
 def up_and_down():
@@ -265,23 +268,41 @@ def sum_elems_in_line(line):
         sum += i
     return sum
 
+def check_elems_in_magic_square(mtx):
+    digits = [i+1 for i in range(len(mtx) * len(mtx))]
+    list_temp = []
+    for i in range(len(mtx)):
+        list_temp.extend(mtx[i])
+    list_temp.sort()
+    return digits == list_temp
 
-def magic_square():
-    n = int(input())
-    mtx = create_square_matrix_from_string(n)
+def magic_square_check(mtx):
     flag = 1
     t = sum_elems_in_line(mtx[0])
     t1 = []
     t2 = []
     t3 = []
-    for i in range(n):
+    for i in range(len(mtx)):
         if sum_elems_in_line(mtx[i]) != t:
             flag = 0
             break
         t1.append(mtx[i][0])
         t2.append(mtx[i][1])
         t3.append(mtx[i][2])
-
-    if sum_elems_in_line(t1) != t or sum_elems_in_line(t2) != t or sum_elems_in_line(t3) != t or :
-        flag = 0
+    print(sum_elems_in_line(t1))
+    print(sum_diagonal_elems(mtx))
+    if sum_elems_in_line(t1) != t or sum_elems_in_line(t2) != t or sum_elems_in_line(t3) != t or \
+            sum_diagonal_elems(mtx) != t or sum_diagonal_elems(swap_diagonals_in_mtx(mtx)) != t:
+                    flag = 0
     return flag == 1
+
+
+def magic_square():
+    mtx = create_square_mtx()
+    if check_elems_in_magic_square(mtx) and magic_square_check(mtx) :
+        print("YES")
+    else:
+        print("NO")
+
+magic_square()
+
