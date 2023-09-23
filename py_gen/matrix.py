@@ -257,3 +257,31 @@ def horse_attack():
                 print(b[i][j])
             else:
                 print(b[i][j], end=' ')
+
+
+def sum_elems_in_line(line):
+    sum = 0
+    for i in line:
+        sum += i
+    return sum
+
+
+def magic_square():
+    n = int(input())
+    mtx = create_square_matrix_from_string(n)
+    flag = 1
+    t = sum_elems_in_line(mtx[0])
+    t1 = []
+    t2 = []
+    t3 = []
+    for i in range(n):
+        if sum_elems_in_line(mtx[i]) != t:
+            flag = 0
+            break
+        t1.append(mtx[i][0])
+        t2.append(mtx[i][1])
+        t3.append(mtx[i][2])
+
+    if sum_elems_in_line(t1) != t or sum_elems_in_line(t2) != t or sum_elems_in_line(t3) != t or :
+        flag = 0
+    return flag == 1
