@@ -304,5 +304,20 @@ def magic_square():
     else:
         print("NO")
 
-magic_square()
 
+def chess_board():
+    # Вводим размер доски
+    n, m = map(int, input().split())
+    sign = {True: ".", False: "*"}
+    flag = True
+    board = [["" for _ in range(m)] for _ in range(n)]
+    for i in range(n):
+        for j in range(m):
+            board[i][j] = sign[flag]
+            flag = not flag
+        if board[i][0] != sign[not flag]:
+            flag = not flag
+    print_matrix(board, n, m)
+
+
+chess_board()
