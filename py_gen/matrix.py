@@ -91,6 +91,7 @@ def more_than_avg():
 
 def max_below_main_diagonal():
     mtx = create_square_mtx()
+    n = len(mtx)
     max = mtx[0][0]
     for i in range(n):
         for j in range(0,i+1):
@@ -100,6 +101,7 @@ def max_below_main_diagonal():
 
 def max_in_area():
     mtx = create_square_mtx()
+    n = len(mtx)
     max = mtx[0][0]
     for i in range(n):
         for j in range(0, n):
@@ -111,7 +113,7 @@ def max_in_area():
 
 def sum_in_quaters():
     mtx = create_square_mtx()
-
+    n = len(mtx)
     top_sum = 0
     right_sum = 0
     bottom_sum = 0
@@ -191,6 +193,7 @@ def swap_column():
 def is_symmetrical():
     mtx = create_square_mtx()
     flag = 1
+    n = len(mtx)
     for i in range(1,n):
         for j in range(0,i):
             print(mtx[i][j],mtx[j][i])
@@ -320,4 +323,16 @@ def chess_board():
     print_matrix(board, n, m)
 
 
-chess_board()
+def side_diagonal():
+    n = int(input())
+    mtx = [[0 for _ in range(n)] for _ in range(n)]
+    for i in range(n):
+        for j in range(n):
+            if i == n - 1 - j:
+                mtx[i][j] = 1
+            if i + j >= n:
+                mtx[i][j] = 2
+
+    print_matrix(mtx, n, n)
+
+side_diagonal()
