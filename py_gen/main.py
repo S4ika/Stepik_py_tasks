@@ -36,6 +36,7 @@ def tasks():
     print("30. Ходы коня")
     print("31. Шахматная доска")
     print("32. Побочная диагональ")
+    print("33. Заполнение 1")
 
 
 def choice():
@@ -106,6 +107,8 @@ def choice():
             matrix.chess_board()
         case 32:
             matrix.side_diagonal()
+        case 33:
+            matrix.fill_matrix()
         case _:
             print("Такой задачи нет =(")
 

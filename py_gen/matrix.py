@@ -13,7 +13,7 @@ def sum_diagonal_elems(matrix):
 def print_matrix(matrix,n,m):
     for i in range(n):
         for j in range(m):
-            print(matrix[i][j], end=" ")
+            print(str(matrix[i][j]).ljust(3), end=" ")
         print()
 
 def print_matrix_2(matrix,n,m):
@@ -335,4 +335,14 @@ def side_diagonal():
 
     print_matrix(mtx, n, n)
 
-side_diagonal()
+def fill_matrix():
+    n,m = map(int,input().split())
+    mtx = [[0 for _ in range(m)] for _ in range(n)]
+    counter = 1
+    for i in range(n):
+        for j in range(m):
+            mtx[i][j] = counter
+            counter += 1
+    print_matrix(mtx, n, m)
+
+fill_matrix()
