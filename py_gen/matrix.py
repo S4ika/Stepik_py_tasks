@@ -343,6 +343,118 @@ def fill_matrix():
         for j in range(m):
             mtx[i][j] = counter
             counter += 1
+    return mtx
+
+
+def fill_matrix_verical():
+    n, m = map(int, input().split())
+    mtx = [[0 for _ in range(m)] for _ in range(n)]
+    for i in range(n):
+        temp = i + 1
+        for j in range(m):
+            mtx[i][j] = temp
+            temp += n
     print_matrix(mtx, n, m)
 
-fill_matrix()
+
+def fill_matrix_zeroes_and_ones():
+    n = int(input())
+    mtx = [[0 for _ in range(n)] for _ in range(n)]
+    for i in range(n):
+        mtx[i][i] = 1
+        mtx[i][n-1-i] = 1
+    print_matrix(mtx, n, n)
+
+
+def fill_matrix_like_sand_clock():
+    n = int(input())
+    mtx = [[0 for _ in range(n)] for _ in range(n)]
+    mid = n % 2 + n // 2
+    for i in range(mid):
+        for j in range(i, n - i):
+            mtx[i][j] = 1
+    for i in range(mid, n):
+        for j in range(n - i - 1, n - (n - i - 1)):
+            mtx[i][j] = 1
+    print_matrix(mtx, n, n)
+
+
+def fill_matrix_with_shift():
+    n, m = map(int, input().split())
+    mtx = [[] for _ in range(n)]
+    list_digits = []
+    for i in range(m):
+        list_digits.append(i + 1)
+    for i in range(n):
+        mtx[i].extend(list_digits)
+        first_dig = list_digits.pop(0)
+        list_digits.append(first_dig)
+    print_matrix(mtx, n, m)
+
+
+def snake_fill_matrix():
+    mtx = fill_matrix()
+    n = len(mtx)
+    m = len(mtx[0])
+    for i in range(n):
+        if i % 2 != 0:
+            for j in range(0, m % 2 + m // 2):
+                temp = mtx[i][j]
+                mtx[i][j] = mtx[i][m - j - 1]
+                mtx[i][m - j - 1] = temp
+    print_matrix(mtx, n, m)
+
+def filling_with_diagonals():
+    n, m = map(int, input().split())
+    mtx = [[0 for _ in range(m)] for _ in range(n)]
+    counter = n + m - 1
+    digit = 1
+    for k in range(counter):
+        for i in range(n):
+            for j in range(m):
+                if i + j == k:
+                    mtx[i][j] = digit
+                    digit += 1
+    print_matrix(mtx, n, m)
+
+def rotate_mtx(mtx, n, m):
+    new_mtx = [[0 for _ in range(n)] for _ in range(m)]
+    for i in range(n):
+        for j in range(m):
+            new_mtx[m - 1 - j][i] = mtx[i][j]
+    return new_mtx
+
+def filling_with_spiral():
+    n, m = map(int, input().split())
+    mtx = [[0 for _ in range(m)] for _ in range(n)]
+    flag = n * m
+    digit = 1
+    i = 0
+    j = 0
+    while flag >= digit:
+        size_hor = len(mtx[0])
+        size_vert = len(mtx)
+        if i < size_vert and j < size_hor and mtx[i][j] == 0:
+            mtx[i][j] = digit
+            digit += 1
+            j += 1
+        else:
+            print(i, j)
+            mtx = rotate_mtx(mtx, size_vert, size_hor)
+
+            j = 1
+            if mtx[i][j] != 0:
+                i += 1
+                j = i % 2 + i // 2
+            print("Поворот :")
+            print_matrix(mtx, len(mtx), len(mtx[0]))
+
+
+filling_with_spiral()
+
+# elif mtx[i][j] != 0:
+# i += 1
+# j = i - 1
+# mtx[i][j] = digit
+# digit += 1
+# j += 1

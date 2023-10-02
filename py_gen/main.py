@@ -37,6 +37,13 @@ def tasks():
     print("31. Шахматная доска")
     print("32. Побочная диагональ")
     print("33. Заполнение 1")
+    print("34. Заполнение 2")
+    print("35. Заполнение 3")
+    print("36. Заполнение 4")
+    print("37. Заполнение 5")
+    print("38. Заполнение змейкой")
+    print("39. Заполнение диагоналями")
+    print("40. Заполнение спиралью")
 
 
 def choice():
@@ -109,6 +116,20 @@ def choice():
             matrix.side_diagonal()
         case 33:
             matrix.fill_matrix()
+        case 34:
+            matrix.fill_matrix_verical()
+        case 35:
+            matrix.fill_matrix_zeroes_and_ones()
+        case 36:
+            matrix.fill_matrix_like_sand_clock()
+        case 37:
+            matrix.fill_matrix_with_shift()
+        case 38:
+            matrix.snake_fill_matrix()
+        case 39:
+            matrix.filling_with_diagonals()
+        case 40:
+            matrix.
         case _:
             print("Такой задачи нет =(")
 
