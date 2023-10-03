@@ -424,8 +424,18 @@ def rotate_mtx(mtx, n, m):
             new_mtx[m - 1 - j][i] = mtx[i][j]
     return new_mtx
 
-def filling_with_spiral():
+def nice_matrix(mtx, n, m):
+    while mtx[0][0] != 1:
+        mtx = rotate_mtx(mtx, len(mtx), len(mtx[0]))
+    if len(mtx) != n or len(mtx[0]) != m:
+        mtx = rotate_mtx(mtx, len(mtx), len(mtx[0]))
+    return mtx
+
+#Плохо работает на больших матрицах
+def filling_with_spiral_slow():
     n, m = map(int, input().split())
+    input_n = n
+    input_m = m
     mtx = [[0 for _ in range(m)] for _ in range(n)]
     flag = n * m
     digit = 1
@@ -434,23 +444,75 @@ def filling_with_spiral():
     while flag >= digit:
         size_hor = len(mtx[0])
         size_vert = len(mtx)
-        if i < size_vert and j < size_hor and mtx[i][j] == 0:
-            mtx[i][j] = digit
-            digit += 1
-            j += 1
-        else:
-            print(i, j)
-            mtx = rotate_mtx(mtx, size_vert, size_hor)
-
-            j = 1
-            if mtx[i][j] != 0:
-                i += 1
-                j = i % 2 + i // 2
-            print("Поворот :")
-            print_matrix(mtx, len(mtx), len(mtx[0]))
+        if j + 1 < size_hor and mtx[i][j + 1] != 0:
+            i += 1
+            j = i
+        for k in range(j,size_hor):
+            if mtx[i][k] == 0:
+                mtx[i][k] = digit
+                digit += 1
+        mtx = rotate_mtx(mtx, size_vert, size_hor)
+        i = 0
+        j = 0
+    result_mtx = nice_matrix(mtx,input_n,input_m)
+    print_matrix(result_mtx, len(result_mtx), len(result_mtx[0]))
 
 
-filling_with_spiral()
+
+def filling_with_spiral_fast():
+    n, m = map(int, input().split())
+    flag_left = False
+    flag_bottom = False
+    digit = n * m
+    counter = 1
+    mtx = [[0 for _ in range(m)] for _ in range(n)]
+    i = 0
+    j = -1
+    while counter <= digit:
+        if not flag_left and not flag_bottom:
+            if j + 1 != len(mtx[0]):
+                if mtx[i][j + 1] == 0:
+                    mtx[i][j + 1] = counter
+                    counter += 1
+                    j += 1
+                else:
+                    flag_left = True
+            else:
+                flag_left = True
+        if not flag_bottom and flag_left:
+            if i + 1 != len(mtx):
+                if mtx[i + 1][j] == 0:
+                    mtx[i + 1][j] = counter
+                    counter += 1
+                    i += 1
+                else:
+                    flag_bottom = True
+            else:
+                flag_bottom = True
+        if flag_left and flag_bottom:
+            if j - 1 > -1:
+                if mtx[i][j - 1] == 0:
+                    mtx[i][j - 1] = counter
+                    counter += 1
+                    j -= 1
+                else:
+                    flag_left = False
+            else:
+                flag_left = False
+        if not flag_left and flag_bottom:
+            if i - 1 > -1:
+                if mtx[i - 1][j] == 0:
+                    mtx[i - 1][j] = counter
+                    counter += 1
+                    i -= 1
+                else:
+                    flag_bottom = False
+            else:
+                flag_bottom = False
+
+    print_matrix(mtx, n, m)
+
+filling_with_spiral_fast()
 
 # elif mtx[i][j] != 0:
 # i += 1

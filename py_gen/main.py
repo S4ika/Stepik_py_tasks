@@ -129,7 +129,7 @@ def choice():
         case 39:
             matrix.filling_with_diagonals()
         case 40:
-            matrix.
+            matrix.filling_with_spiral_fast()
         case _:
             print("Такой задачи нет =(")
 
