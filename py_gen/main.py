@@ -1,6 +1,7 @@
 import josephus_problem, coordinate_quarters, more_than_previous, swap_neighbour,\
     developmental_shift, various_elements, mul_dig, rock_paper_scissors,rock_paper_scissors_lizard_spok,\
     o_and_p,sillicon_valley,roscomnadzor, pascal_triangle, packing_duplicates, chunky, sublists, matrix
+import tuples
 
 
 def tasks():
@@ -44,6 +45,12 @@ def tasks():
     print("38. Заполнение змейкой")
     print("39. Заполнение диагоналями")
     print("40. Заполнение спиралью")
+    print("41. Сложение матриц")
+    print("42. Умножение матриц 🌶️")
+    print("43. Возведение матрицы в степень 🌶️")
+    print("44. Вершина параболы")
+    print("45. Конкурсный отбор")
+    print("46. Последовательность Трибоначчи")
 
 
 def choice():
@@ -130,6 +137,18 @@ def choice():
             matrix.filling_with_diagonals()
         case 40:
             matrix.filling_with_spiral_fast()
+        case 41:
+            matrix.sum_matrix_task()
+        case 42:
+            matrix.mul_task()
+        case 43:
+            matrix.power_matrix()
+        case 44:
+            tuples.top_of_parabola()
+        case 45:
+            tuples.competitive_selection()
+        case 46:
+            tuples.print_tribonacci_sequence()
         case _:
             print("Такой задачи нет =(")
 

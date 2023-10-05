@@ -512,11 +512,46 @@ def filling_with_spiral_fast():
 
     print_matrix(mtx, n, m)
 
-filling_with_spiral_fast()
+def sum_matrix(mtx1,mtx2):
+    result_mtx = [[0 for _ in range(len(mtx1[0]))] for _ in range(len(mtx1))]
+    for i in range(len(mtx1)):
+        for j in range(len(mtx1[0])):
+            result_mtx[i][j] = mtx1[i][j] + mtx2[i][j]
+    return result_mtx
 
-# elif mtx[i][j] != 0:
-# i += 1
-# j = i - 1
-# mtx[i][j] = digit
-# digit += 1
-# j += 1
+def sum_matrix_task():
+    n, m = map(int, input().split())
+    mtx1 = create_square_matrix_from_string(n)
+    input()
+    mtx2 = create_square_matrix_from_string(n)
+    print_matrix(sum_matrix(mtx1, mtx2), n, m)
+
+def mul_matrix(mtx1, mtx2):
+    result_mtx = [[0 for _ in range(len(mtx2[0]))] for _ in range(len(mtx1))]
+    for i in range(len(mtx1)):
+        for j in range(len(mtx2[0])):
+            for k in range(len(mtx1[0])):
+                result_mtx[i][j] += mtx1[i][k] * mtx2[k][j]
+    return result_mtx
+
+def mul_task():
+    n, m = map(int, input().split())
+    mtx1 = create_square_matrix_from_string(n)
+    input()
+    n2, m2 = map(int, input().split())
+    mtx2 = create_square_matrix_from_string(n2)
+    print_matrix(mul_matrix(mtx1, mtx2), n, m2)
+
+def power_matrix():
+    n = int(input())
+    mtx = create_square_matrix_from_string(n)
+    mtx_1 = [[] for _ in range(n)]
+    for i in range(n):
+        t = mtx[i].copy()
+        mtx_1[i].extend(t)
+    power = int(input())
+    for _ in range(power):
+        mtx = mul_matrix(mtx,mtx_1)
+    print_matrix(mtx)
+
+power_matrix()
