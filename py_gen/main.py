@@ -1,6 +1,8 @@
+import Final_work_on_nested_lists_and_matrices
 import josephus_problem, coordinate_quarters, more_than_previous, swap_neighbour,\
     developmental_shift, various_elements, mul_dig, rock_paper_scissors,rock_paper_scissors_lizard_spok,\
     o_and_p,sillicon_valley,roscomnadzor, pascal_triangle, packing_duplicates, chunky, sublists, matrix
+import sets
 import tuples
 
 
@@ -51,6 +53,9 @@ def tasks():
     print("44. Вершина параболы")
     print("45. Конкурсный отбор")
     print("46. Последовательность Трибоначчи")
+    print("47. Итоговая работа на вложенные списки и матрицы")
+    print("48. Тимур и его команда")
+    print("49. Книги на прочтение 🌶️")
 
 
 def choice():
@@ -149,6 +154,10 @@ def choice():
             tuples.competitive_selection()
         case 46:
             tuples.print_tribonacci_sequence()
+        case 47:
+            Final_work_on_nested_lists_and_matrices.final_work_on_nexted_lists_and_matrics()
+        case 48:
+            print(sets.timur_and_team())
         case _:
             print("Такой задачи нет =(")
 

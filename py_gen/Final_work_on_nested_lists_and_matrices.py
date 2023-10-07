@@ -132,7 +132,6 @@ def diagonals_parallel_to_the_main_diagonal():
             mtx[i][j] = abs(i-j)
     print_matrix(mtx, n, n)
 
-diagonals_parallel_to_the_main_diagonal()
 
 def final_work_on_nexted_lists_and_matrics():
     print("1. Каждый n-ый элемент\n2. Максимальный в области 2\n3. Транспонирование матрицы\n4. Снежинка"
@@ -157,3 +156,7 @@ def final_work_on_nexted_lists_and_matrics():
         case 7:
             queens_moves()
         case 8:
+            diagonals_parallel_to_the_main_diagonal()
+
+tpl = (100,)
+print(tpl * 2)
