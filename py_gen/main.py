@@ -56,6 +56,15 @@ def tasks():
     print("47. Итоговая работа на вложенные списки и матрицы")
     print("48. Тимур и его команда")
     print("49. Книги на прочтение 🌶️")
+    print("50. Количество различных символов")
+    print("51. Неповторимые цифры")
+    print("52. Все 10 цифр")
+    print("53. Одинаковые наборы")
+    print("54. Три слова")
+    print("55. Уникальные символы 1")
+    print("56. Уникальные символы 2")
+    print("57. Количество слов в тексте")
+    print("58. Встречалось ли число раньше?")
 
 
 def choice():
@@ -158,6 +167,26 @@ def choice():
             Final_work_on_nested_lists_and_matrices.final_work_on_nexted_lists_and_matrics()
         case 48:
             print(sets.timur_and_team())
+        case 49:
+            sets.summer_books()
+        case 50:
+            sets.count_different_simb()
+        case 51:
+            sets.unique_digits()
+        case 52:
+            sets.all_ten_digits()
+        case 53:
+            sets.same_sets()
+        case 54:
+            sets.same_letters_in_three_words()
+        case 55:
+            sets.unique_symb_1()
+        case 56:
+            sets.unique_symb_2()
+        case 57:
+            sets.count_words()
+        case 58:
+            sets.is_this_number_in_the_set()
         case _:
             print("Такой задачи нет =(")
 
