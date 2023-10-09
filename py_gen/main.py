@@ -65,6 +65,14 @@ def tasks():
     print("56. Уникальные символы 2")
     print("57. Количество слов в тексте")
     print("58. Встречалось ли число раньше?")
+    print("59. Количество совпадающих")
+    print("60. Общие числа")
+    print("61. Числа первой строки")
+    print("62. Общие цифры")
+    print("63. Одинаковые цифры")
+    print("64. Все цифры")
+    print("65. Урок информатики")
+    print("66. Урок математики")
 
 
 def choice():
@@ -187,6 +195,22 @@ def choice():
             sets.count_words()
         case 58:
             sets.is_this_number_in_the_set()
+        case 59:
+            sets.lenght_union_sets()
+        case 60:
+            sets.sorted_union()
+        case 61:
+            sets.sorted_dif()
+        case 62:
+            sets.same_dig_in_strings()
+        case 63:
+            sets.same_digits_in_two_numbers()
+        case 64:
+            sets.check_superset()
+        case 65:
+            sets.informatica_lesson()
+        case 66:
+            sets.math_lesson()
         case _:
             print("Такой задачи нет =(")
 

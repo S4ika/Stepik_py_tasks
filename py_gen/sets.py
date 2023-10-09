@@ -107,3 +107,72 @@ def is_this_number_in_the_set():
         else:
             print("NO")
         our_set.add(int(i))
+
+
+def lenght_union_sets():
+    set_1 = set(input().split())
+    set_2 = set(input().split())
+    print(len(set_1 & set_2))
+
+
+def sorted_union():
+    set_1 = set(int(i) for i in input().split())
+    set_2 = set(int(i) for i in input().split())
+    sorted_list = sorted(set_1 & set_2)
+    result = ""
+    for i in sorted_list:
+        result += str(i) + " "
+    print(result[:-1])
+
+
+def sorted_dif():
+    set_1 = set(int(i) for i in input().split())
+    set_2 = set(int(i) for i in input().split())
+    sorted_list = sorted(set_1 - set_2)
+    res = ""
+    for i in sorted_list:
+        res += str(i) + " "
+    print(res[:-1])
+
+
+def same_dig_in_strings():
+    n = int(input())
+    input_set = set(map(int, set(input())))
+    for i in range(n - 1):
+        new_input_set = set(map(int, set(input())))
+        input_set &= new_input_set
+    res = ""
+    sorted_list = sorted(input_set)
+    for i in sorted_list:
+        res += str(i) + " "
+    print(res[:-1])
+
+
+def same_digits_in_two_numbers():
+    input_set_1 = set(map(int, set(input())))
+    input_set_2 = set(map(int, set(input())))
+    if input_set_1.isdisjoint(input_set_2):
+        print("NO")
+    else:
+        print("YES")
+
+def check_superset():
+    input_set_1 = set(map(int, set(input())))
+    input_set_2 = set(map(int, set(input())))
+    if input_set_1.issuperset(input_set_2):
+        print("YES")
+    else:
+        print("NO")
+
+def informatica_lesson():
+    input_set_1 = set(map(int, input().split()))
+    input_set_2 = set(map(int, input().split()))
+    input_set_3 = set(map(int, input().split()))
+    result_list = sorted((input_set_1 & input_set_2) - input_set_3, reverse=True)
+    r = ""
+    for i in result_list:
+        r += str(i) + " "
+    print(r[:-1])
+
+
+informatica_lesson()
