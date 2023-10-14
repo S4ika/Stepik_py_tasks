@@ -205,5 +205,3 @@ def biology_lesson():
     for i in result_list:
         r += str(i) + " "
     print(r[:-1])
-
-biology_lesson()

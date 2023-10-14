@@ -1,4 +1,5 @@
 import Final_work_on_nested_lists_and_matrices
+import dictionaries
 import josephus_problem, coordinate_quarters, more_than_previous, swap_neighbour,\
     developmental_shift, various_elements, mul_dig, rock_paper_scissors,rock_paper_scissors_lizard_spok,\
     o_and_p,sillicon_valley,roscomnadzor, pascal_triangle, packing_duplicates, chunky, sublists, matrix
@@ -75,6 +76,19 @@ def tasks():
     print("66. Урок математики")
     print("67. Урок физики")
     print("68. Урок биологии")
+    print("69. Строковое представление")
+    print("70. Информация об учебных курсах")
+    print("71. Набор сообщений")
+    print("72. Код Морзе")
+    print("73. Самое редкое слово 🌶️")
+    print("74. Исправление дубликатов 🌶️")
+    print("75. Словарь программиста")
+    print("76. Анаграммы 1")
+    print("77. Анаграммы 2")
+    print("78. Словарь синонимов")
+    print("79. Страны и города")
+    print("80. Телефонная книга")
+    print("81. Секретное слово")
 
 
 def choice():
@@ -217,6 +231,32 @@ def choice():
             sets.physics_lesson()
         case 68:
             sets.biology_lesson()
+        case 69:
+            dictionaries.string_representation()
+        case 70:
+            dictionaries.training_courses_information()
+        case 71:
+            dictionaries.message_typing()
+        case 72:
+            dictionaries.morse_code()
+        case 73:
+            dictionaries.rarest_word()
+        case 74:
+            dictionaries.correcting_duplicates()
+        case 75:
+            dictionaries.program_dictionary()
+        case 76:
+            dictionaries.anagrams_1()
+        case 77:
+            dictionaries.anagrams_2()
+        case 78:
+            dictionaries.synonym_dictionary()
+        case 79:
+            dictionaries.countries_and_cities()
+        case 80:
+            dictionaries.phone_book()
+        case 81:
+            dictionaries.secret_word()
         case _:
             print("Такой задачи нет =(")
 
