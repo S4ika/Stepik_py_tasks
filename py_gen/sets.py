@@ -175,4 +175,35 @@ def informatica_lesson():
     print(r[:-1])
 
 
-informatica_lesson()
+def math_lesson():
+    input_set_1 = set(map(int, input().split()))
+    input_set_2 = set(map(int, input().split()))
+    input_set_3 = set(map(int, input().split()))
+    result_list = sorted(((input_set_1 | input_set_2 | input_set_3) - (input_set_1 & input_set_2 & input_set_3)))
+    r = ""
+    for i in result_list:
+        r += str(i) + " "
+    print(r[:-1])
+
+def physics_lesson():
+    input_set_1 = set(map(int, input().split()))
+    input_set_2 = set(map(int, input().split()))
+    input_set_3 = set(map(int, input().split()))
+    result_list = sorted((input_set_3 - input_set_1 - input_set_2), reverse=True)
+    r = ""
+    for i in result_list:
+        r += str(i) + " "
+    print(r[:-1])
+
+def biology_lesson():
+    input_set_1 = set(map(int, input().split()))
+    input_set_2 = set(map(int, input().split()))
+    input_set_3 = set(map(int, input().split()))
+    universum = set(range(11))
+    result_list = sorted((universum - (input_set_3 | input_set_1 | input_set_2)))
+    r = ""
+    for i in result_list:
+        r += str(i) + " "
+    print(r[:-1])
+
+biology_lesson()

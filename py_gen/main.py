@@ -73,6 +73,8 @@ def tasks():
     print("64. Все цифры")
     print("65. Урок информатики")
     print("66. Урок математики")
+    print("67. Урок физики")
+    print("68. Урок биологии")
 
 
 def choice():
@@ -211,6 +213,10 @@ def choice():
             sets.informatica_lesson()
         case 66:
             sets.math_lesson()
+        case 67:
+            sets.physics_lesson()
+        case 68:
+            sets.biology_lesson()
         case _:
             print("Такой задачи нет =(")
 
