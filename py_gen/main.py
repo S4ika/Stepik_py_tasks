@@ -1,8 +1,11 @@
 import Final_work_on_nested_lists_and_matrices
+import complex_digits
 import dictionaries
+import fractions
 import josephus_problem, coordinate_quarters, more_than_previous, swap_neighbour,\
     developmental_shift, various_elements, mul_dig, rock_paper_scissors,rock_paper_scissors_lizard_spok,\
     o_and_p,sillicon_valley,roscomnadzor, pascal_triangle, packing_duplicates, chunky, sublists, matrix
+import random_and_string
 import sets
 import tuples
 
@@ -89,6 +92,18 @@ def tasks():
     print("79. Страны и города")
     print("80. Телефонная книга")
     print("81. Секретное слово")
+    print("82. Тайный друг 🌶️")
+    print("83. Генератор паролей 1")
+    print("84. Генератор паролей 2")
+    print("85. Сократите дробь")
+    print("86. Операции над дробями")
+    print("87. Сумма дробей 1")
+    print("88. Сумма дробей 2")
+    print("89. Юный математик 🌶️")
+    print("90. Упорядоченные дроби")
+    print("91. Операции над комплексными числами")
+    print("92. Комплексное число с наибольшим модулем")
+    print("93. Сопряженные числа")
 
 
 def choice():
@@ -257,6 +272,30 @@ def choice():
             dictionaries.phone_book()
         case 81:
             dictionaries.secret_word()
+        case 82:
+            random_and_string.secret_friend()
+        case 83:
+            random_and_string.pass_gen_1()
+        case 84:
+            random_and_string.pass_gen_2()
+        case 85:
+            fractions.fraction_reduce()
+        case 86:
+            fractions.fraction_operations()
+        case 87:
+            fractions.sum_fractions_1()
+        case 88:
+            fractions.sum_fractions_2()
+        case 89:
+            fractions.young_mathematics()
+        case 90:
+            fractions.sorted_fractions()
+        case 91:
+            complex_digits.complex_nums_operators()
+        case 92:
+            complex_digits.abs_complex()
+        case 93:
+            complex_digits.conjugate_numbers()
         case _:
             print("Такой задачи нет =(")
 

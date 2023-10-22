@@ -157,6 +157,3 @@ def final_work_on_nexted_lists_and_matrics():
             queens_moves()
         case 8:
             diagonals_parallel_to_the_main_diagonal()
-
-tpl = (100,)
-print(tpl * 2)
